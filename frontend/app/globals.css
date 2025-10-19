@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #a6c8be;
+  --foreground: #062427;
+
+  --footer-background: #116a67;
+  --footer-foreground: #012024;
+
+  --task-background: #748f87;
+  --task-foreground: #072c2f;
+
+  --task-created: #cccccc;
+
+  --button_create: #9143ff;
+  --button_create-hover: #8139e4;
+  --button_create-active: #6930b9;
+
+  --button_edit: #33cfff;
+  --button_edit-hover: #2eb4dd;
+  --button_edit-active: #2694b5;
+
+  --button_complete: #37ff9e;
+  --button_complete-hover: #2fe18b;
+  --button_complete-active: #26b36f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #07303a;
+    --foreground: #240053;
+
+    --task-background: #042027;
+    --task-foreground: #aaf4ff;
+
+    --task-created: #cccccc;
+  }
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  padding-bottom: 80px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  background: var(--footer-background);
+  color: var(--footer-foreground);
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  color: var(--foreground);
+  user-select: none;
+  box-shadow: 0px 4px 16px 6px rgba(34, 60, 80, 0.2);
+}
+
+.button-create {
+  background-color: var(--button_create);
+}
+
+.button-create:hover {
+  background-color: var(--button_create-hover);
+}
+
+.button-create:active {
+  background-color: var(--button_create-active);
+}
+
+.button-edit {
+  background-color: var(--button_edit);
+}
+
+.button-edit:hover {
+  background-color: var(--button_edit-hover);
+}
+
+.button-edit:active {
+  background-color: var(--button_edit-active);
+}
+
+.button-complete {
+  background-color: var(--button_complete);
+}
+
+.button-complete:hover {
+  background-color: var(--button_complete-hover);
+}
+
+.button-complete:active {
+  background-color: var(--button_complete-active);
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 70%;
+  padding: 14px;
+  border-radius: 30px;
+  background: var(--task-background);
+  color: var(--task-foreground);
+  box-shadow: 0px 4px 16px 6px rgba(34, 60, 80, 0.2);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  width: 30%;
+}
+
+.description {
+  padding-bottom: 16px;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  width: 100%;
+}
+
+.created {
+  font-size: 12px;
+  color: var(--task-created);
+  text-align: end;
+  align-self: flex-end;
+  padding-top: 4px;
+}
+
+.title-input,
+.description-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+
+  font-family: inherit;
+  color: inherit;
+  line-height: inherit;
+}
+
+.title-input {
+  font-size: 24px;
+  font-weight: bold;
+  width: 30%;
+}
+
+.description-input {
+  font-size: 16px;
+  padding-bottom: 16px;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .task {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .task {
+    width: 60%;
+  }
+}
